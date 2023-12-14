@@ -1,5 +1,4 @@
 import * as cx from "classnames";
-//import PropTypes from "prop-types";
 import React, { useEffect, useReducer, useRef } from "react";
 import { ITreeViewState, treeReducer, TreeViewAction } from "./reducer";
 import {
@@ -38,8 +37,6 @@ import { Node } from "./node";
 import {
   baseClassNames,
   clickActions,
-  CLICK_ACTIONS,
-  NODE_ACTIONS,
   treeTypes,
 } from "./constants";
 
