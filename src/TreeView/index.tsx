@@ -1,4 +1,4 @@
-import cx from "classnames";
+const cx = require("classnames");
 import PropTypes from "prop-types";
 import React, { useEffect, useReducer, useRef } from "react";
 import { ITreeViewState, treeReducer, TreeViewAction } from "./reducer";

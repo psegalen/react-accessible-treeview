@@ -1,5 +1,6 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const cx = require("classnames");
 import React from "react";
-import cx from "classnames";
 import { ITreeViewState, TreeViewAction } from "./reducer";
 import {
   ClickActions,
