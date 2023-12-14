@@ -1,5 +1,5 @@
 import * as cx from "classnames";
-import * as PropTypes from "prop-types";
+import PropTypes from "prop-types";
 import React, { useEffect, useReducer, useRef } from "react";
 import { ITreeViewState, treeReducer, TreeViewAction } from "./reducer";
 import {
