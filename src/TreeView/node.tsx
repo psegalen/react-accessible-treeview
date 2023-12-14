@@ -1,5 +1,4 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
-const cx = require("classnames");
+import classNames from "classnames";
 import React from "react";
 import { ITreeViewState, TreeViewAction } from "./reducer";
 import {
@@ -186,7 +185,7 @@ export const Node = (props: INodeProps) => {
   };
 
   const getClasses = (className: string) => {
-    return cx(className, {
+    return classNames(className, {
       [`${className}--expanded`]: expandedIds.has(element.id),
       [`${className}--selected`]: selectedIds.has(element.id),
       [`${className}--focused`]: tabbableId === element.id && isFocused,
@@ -224,7 +223,7 @@ export const Node = (props: INodeProps) => {
           leafRefs.current[element.id] = x;
         }
       },
-      className: cx(getClasses(baseClassNames.node), baseClassNames.leaf),
+      className: classNames(getClasses(baseClassNames.node), baseClassNames.leaf),
       "aria-setsize": setsize,
       "aria-posinset": posinset,
       "aria-level": level,
@@ -241,7 +240,7 @@ export const Node = (props: INodeProps) => {
         onClick == null
           ? composeHandlers(handleSelect, handleExpand, handleFocus)
           : composeHandlers(onClick, handleFocus),
-      className: cx(getClasses(baseClassNames.node), baseClassNames.branch),
+      className: classNames(getClasses(baseClassNames.node), baseClassNames.branch),
       ref: (x: INodeRef) => {
         if (leafRefs?.current != null) {
           leafRefs.current[element.id] = x;

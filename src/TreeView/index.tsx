@@ -1,6 +1,5 @@
-/* eslint-disable @typescript-eslint/no-var-requires */
-const cx = require("classnames");
-const PropTypes = require("prop-types");
+import classNames from "classnames";
+import PropTypes from "prop-types";
 import React, { useEffect, useReducer, useRef } from "react";
 import { ITreeViewState, treeReducer, TreeViewAction } from "./reducer";
 import {
@@ -571,7 +570,7 @@ const TreeView = React.forwardRef<HTMLUListElement, ITreeViewProps>(
 
     return (
       <ul
-        className={cx(baseClassNames.root, className)}
+        className={classNames(baseClassNames.root, className)}
         role="tree"
         aria-multiselectable={nodeAction === "select" ? multiSelect : undefined}
         ref={innerRef}
