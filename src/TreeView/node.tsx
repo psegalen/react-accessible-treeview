@@ -1,4 +1,4 @@
-import classNames from "classnames";
+import * as cx from "classnames";
 import React from "react";
 import { ITreeViewState, TreeViewAction } from "./reducer";
 import {
@@ -185,7 +185,7 @@ export const Node = (props: INodeProps) => {
   };
 
   const getClasses = (className: string) => {
-    return classNames(className, {
+    return cx.default(className, {
       [`${className}--expanded`]: expandedIds.has(element.id),
       [`${className}--selected`]: selectedIds.has(element.id),
       [`${className}--focused`]: tabbableId === element.id && isFocused,
@@ -223,7 +223,7 @@ export const Node = (props: INodeProps) => {
           leafRefs.current[element.id] = x;
         }
       },
-      className: classNames(getClasses(baseClassNames.node), baseClassNames.leaf),
+      className: cx.default(getClasses(baseClassNames.node), baseClassNames.leaf),
       "aria-setsize": setsize,
       "aria-posinset": posinset,
       "aria-level": level,
@@ -240,7 +240,7 @@ export const Node = (props: INodeProps) => {
         onClick == null
           ? composeHandlers(handleSelect, handleExpand, handleFocus)
           : composeHandlers(onClick, handleFocus),
-      className: classNames(getClasses(baseClassNames.node), baseClassNames.branch),
+      className: cx.default(getClasses(baseClassNames.node), baseClassNames.branch),
       ref: (x: INodeRef) => {
         if (leafRefs?.current != null) {
           leafRefs.current[element.id] = x;

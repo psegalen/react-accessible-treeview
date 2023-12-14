@@ -1,5 +1,5 @@
-import classNames from "classnames";
-import PropTypes from "prop-types";
+import * as cx from "classnames";
+import * as PropTypes from "prop-types";
 import React, { useEffect, useReducer, useRef } from "react";
 import { ITreeViewState, treeReducer, TreeViewAction } from "./reducer";
 import {
@@ -570,7 +570,7 @@ const TreeView = React.forwardRef<HTMLUListElement, ITreeViewProps>(
 
     return (
       <ul
-        className={classNames(baseClassNames.root, className)}
+        className={cx.default(baseClassNames.root, className)}
         role="tree"
         aria-multiselectable={nodeAction === "select" ? multiSelect : undefined}
         ref={innerRef}
