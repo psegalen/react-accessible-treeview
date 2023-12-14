@@ -1,5 +1,5 @@
 import * as cx from "classnames";
-import PropTypes from "prop-types";
+//import PropTypes from "prop-types";
 import React, { useEffect, useReducer, useRef } from "react";
 import { ITreeViewState, treeReducer, TreeViewAction } from "./reducer";
 import {
@@ -930,74 +930,6 @@ const handleKeyDown = ({
       }
       return;
   }
-};
-
-TreeView.propTypes = {
-  /** Tree data*/
-  data: PropTypes.array.isRequired,
-
-  /** Function called when a node changes its selected state */
-  onSelect: PropTypes.func,
-
-  /** Function called when a single node is manually selected/unselected. */
-  onNodeSelect: PropTypes.func,
-
-  /** Function called when a node changes its expanded state */
-  onExpand: PropTypes.func,
-
-  /** className to add to the outermost ul*/
-  className: PropTypes.string,
-
-  /** Render prop for the node */
-  nodeRenderer: PropTypes.func.isRequired,
-
-  /** Array with the ids of the default expanded nodes*/
-  defaultExpandedIds: PropTypes.array,
-
-  /** Array with the ids of the default selected nodes*/
-  defaultSelectedIds: PropTypes.array,
-
-  /** Array with the ids of controlled expanded nodes */
-  expandedIds: PropTypes.array,
-
-  /** Array with the ids of controlled selected nodes */
-  selectedIds: PropTypes.array,
-
-  /** Array with the ids of the default disabled nodes*/
-  defaultDisabledIds: PropTypes.array,
-
-  /** If true, collapsing a node will also collapse its descendants */
-  propagateCollapse: PropTypes.bool,
-
-  /** If true, selecting a node will also select its descendants */
-  propagateSelect: PropTypes.bool,
-
-  /** If true, selecting a node will update the state of its parent (e.g. a parent node in a checkbox
-   * will be automatically selected if all of its children are selected)*/
-  propagateSelectUpwards: PropTypes.bool,
-
-  /** Allows multiple nodes to be selected */
-  multiSelect: PropTypes.bool,
-
-  /** Selecting a node with a keyboard (using Space or Enter) will also toggle its expanded state */
-  expandOnKeyboardSelect: PropTypes.bool,
-
-  /** Wether the selected state is togglable */
-  togglableSelect: PropTypes.bool,
-
-  /** Indicates what action will be performed on a node which informs the correct aria-*
-   * properties to use on the node (aria-checked if using checkboxes, aria-selected if not). */
-  nodeAction: PropTypes.oneOf(NODE_ACTIONS),
-
-  /** action to perform on click */
-  clickAction: PropTypes.oneOf(CLICK_ACTIONS),
-
-  /** Custom onBlur event that is triggered when focusing out of the component
-   * as a whole (moving focus between the nodes won't trigger it) */
-  onBlur: PropTypes.func,
-
-  /** Function called to load data asynchronously on expand */
-  onLoadData: PropTypes.func,
 };
 
 export default TreeView;
