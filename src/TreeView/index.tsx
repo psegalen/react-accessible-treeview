@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const cx = require("classnames");
 import PropTypes from "prop-types";
 import React, { useEffect, useReducer, useRef } from "react";
