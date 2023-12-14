@@ -1,6 +1,6 @@
-// eslint-disable-next-line @typescript-eslint/no-var-requires
+/* eslint-disable @typescript-eslint/no-var-requires */
 const cx = require("classnames");
-import PropTypes from "prop-types";
+const PropTypes = require("prop-types");
 import React, { useEffect, useReducer, useRef } from "react";
 import { ITreeViewState, treeReducer, TreeViewAction } from "./reducer";
 import {
